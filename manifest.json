@@ -1,0 +1,45 @@
+{
+    "manifest_version": 3,
+    "name": "KahootGPT",
+    "version": "0.0.1",
+
+    "description": "Удивительно не честный способ победить",
+    "short_name": "KGPT",
+
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {              
+        "16": "images/shikimori16.png",   
+        "19": "images/shikimori16.png",
+        "38": "images/shikimori16.png",
+        "24": "images/shikimori24.png",  
+        "32": "images/shikimori32.png",
+        "128": "images/shikimori128.png"  
+        },
+        "icons": {
+            "16": "images/shikimori16.png",
+            "32": "images/shikimori32.png",
+            "48": "images/shikimori48.png",
+            "128": "images/shikimori128.png"
+        },
+        "default_title": "ты ужасный человек, горужсь тобой"
+    },
+    "author": "jakel2856@Gmail.com",
+    "content_scripts": [{
+        "matches": ["https://kahoot.it/*"],
+        "js": [
+            "content_scripts.js"
+        ],
+        "css": [
+        ]
+    }],
+    "background":{
+        "service_worker" : "background.js",
+        "type": "module"
+    },
+    "permissions": [
+        "activeTab",
+        "tabs",
+        "storage"
+      ]
+  }
